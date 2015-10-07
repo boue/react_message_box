@@ -29,7 +29,7 @@
 
       return (
         <div className="container jumbotron" style={inlineStyles}>
-          <h2>Hello, World</h2>
+          <h2>{this.props.titleMessage}</h2>
           <SubMessage />
         </div>
       );
@@ -37,9 +37,20 @@
   });
 
   var SubMessage = React.createClass({
+
+    propTypes: function(){
+      message: React.PropTypes.string.isRequired
+    },
+
+    getDefaultProps: function() {
+      return {
+        message: 'Its good to see you'
+      }
+    },
+
     render: function(){
       return (
-        <div>Good to see you</div>
+        <div>{this.props.message}</div>
       );
     }
   });
