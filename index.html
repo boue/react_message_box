@@ -15,6 +15,11 @@
   /** @jsx React.DOM */
   var MessageBox = React.createClass({
 
+    //event handlers return events hence the 'e'
+    handleAdd: function(e){
+      console.log(e.target);
+    },
+
     getInitialState: function(){
       return {
         isVisible: true,
